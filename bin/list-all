@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git ls-remote --tags --refs https://github.com/lpil/gleam "v*" | sed 's;^.*refs/tags/v\(.*\)$;\1;' | xargs echo
