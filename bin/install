@@ -25,7 +25,7 @@ install_gleam() {
       tar -xf "$release_file" -C $install_path/bin
     else
       # install from source
-      git clone --depth 1 --branch "$version" "https://github.com/lpil/gleam" "$tmp_dir/src"
+      git clone --depth 1 --branch "$version" "https://github.com/gleam-lang/gleam" "$tmp_dir/src"
       cargo install --path "$tmp_dir/src/gleam" --root "$install_path"
     fi
   ) || rm -rf $install_path
@@ -74,7 +74,7 @@ download_file() {
 get_download_url() {
   local version=$1
   local variant=$(get_variant $version)
-  echo "https://github.com/lpil/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
+  echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
 }
 
 

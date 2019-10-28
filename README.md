@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/vic/asdf-gleam.svg?branch=master)](https://travis-ci.org/vic/asdf-gleam)
 
-[Gleam](https://github.com/lpil/gleam) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
+[Gleam](https://github.com/gleam-lang/gleam) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
 
 ## Install
