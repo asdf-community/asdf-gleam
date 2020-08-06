@@ -27,7 +27,7 @@ If you want to build from source. Use
 ```shell
 # Installing from source needs Rust. You might want to install it using asdf-rust.
 # Using `ref:`, you can specify any branch, tag (like `v0.2.0`) or commit-sha
-asdf install gleam ref:master
+asdf install gleam ref:main
 ```
 
 ## Use
