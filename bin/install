@@ -8,7 +8,7 @@ install_gleam() {
   local version=$2
   local install_path=$3
 
-  if [ "$install_type" = "version" ] && ! (has_binary_release $version) ; then
+  if [ "$install_type" = "version" ] && ! (has_binary_release $version); then
     echo "ERROR: Gleam version $version has no binary release."
     echo "Try installing from source. You will need a working rust compiler."
     exit 1
@@ -41,7 +41,6 @@ has_binary_release() {
 # from https://stackoverflow.com/questions/16989598/bash-comparing-version-numbers/24067243
 version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
 
-
 get_variant() {
   local version="$1"
   case "$(uname -s)" in
@@ -49,16 +48,17 @@ get_variant() {
       case "$(uname -m)" in
         x86_64) echo linux-amd64 ;;
         *) fail "$(uname -m) is not supported on linux" ;;
-      esac ;;
+      esac
+      ;;
     Darwin)
       case "$(uname -m)" in
         x86_64) echo macos ;;
         *) fail "$(uname -m) is not supported on macos" ;;
-      esac ;;
+      esac
+      ;;
     *) fail "$(uname -s) is not supported" ;;
   esac
 }
-
 
 download_file() {
   local download_path="$1"
@@ -70,12 +70,10 @@ download_file() {
   curl -Lo "$download_path" "$download_url"
 }
 
-
 get_download_url() {
   local version=$1
   local variant=$(get_variant $version)
   echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
 }
-
 
 install_gleam $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
