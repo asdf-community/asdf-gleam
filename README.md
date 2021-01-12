@@ -1,14 +1,17 @@
 # asdf-gleam
 
-[![Build Status](https://travis-ci.org/vic/asdf-gleam.svg?branch=master)](https://travis-ci.org/vic/asdf-gleam)
+[Gleam](https://github.com/gleam-lang/gleam) plugin for
+[asdf](https://github.com/asdf-vm/asdf) version manager
 
-[Gleam](https://github.com/gleam-lang/gleam) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
+## Build History
 
+[![Build history](https://buildstats.info/github/chart/asdf-community/asdf-gleam?branch=master)](https://github.com/asdf-community/asdf-gleam/actions)
 
 ## Install
 
-> *Gleam runtime depends on Erlang. You might need to install it using asdf-erlang.
-> For using gleam libraries you might also need `rebar3`. It is installable via asdf-rebar.
+> \*Gleam runtime depends on Erlang. You might need to install it using
+> asdf-erlang. For using gleam libraries you might also need `rebar3`. It is
+> installable via asdf-rebar.
 
 ```
 asdf plugin-add gleam https://github.com/vic/asdf-gleam.git
@@ -21,7 +24,6 @@ Since `0.2.0`, Gleam has binary releases for macos and linux.
 asdf install gleam 0.2.0
 ```
 
-
 If you want to build from source. Use
 
 ```shell
@@ -32,4 +34,5 @@ asdf install gleam ref:main
 
 ## Use
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of Gleam.
+Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to
+install & manage versions of Gleam.
