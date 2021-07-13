@@ -26,7 +26,7 @@ install_gleam() {
     else
       # install from source
       git clone --depth 1 --branch "$version" "https://github.com/gleam-lang/gleam" "$tmp_dir/src"
-      cargo install --path "$tmp_dir/src" --root "$install_path"
+      cargo install --path "$tmp_dir/src/compiler-cli" --root "$install_path"
     fi
   ) || rm -rf $install_path
 
