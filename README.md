@@ -21,7 +21,7 @@ Since `0.2.0`, Gleam has binary releases for macos and linux.
 
 ```
 # To install a binary release, just specify it
-asdf install gleam 0.2.0
+asdf install gleam latest
 ```
 
 If you want to build from source. Use
