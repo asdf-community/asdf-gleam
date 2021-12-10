@@ -53,6 +53,7 @@ get_variant() {
     Darwin)
       case "$(uname -m)" in
         x86_64) echo macos ;;
+        arm64) echo macos-arm64 ;;
         *) fail "$(uname -m) is not supported on macos" ;;
       esac
       ;;
