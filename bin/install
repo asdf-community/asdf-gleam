@@ -80,6 +80,7 @@ get_download_url() {
       ;;
     *)
       echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
+      ;;
   esac
 }
 

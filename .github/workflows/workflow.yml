@@ -23,6 +23,12 @@ jobs:
         with:
           command: gleam --version
 
+      - name: asdf_plugin_test nightly
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: gleam --version
+          version: nightly
+
   format:
     runs-on: macos-latest
 
