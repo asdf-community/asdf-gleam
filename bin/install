@@ -76,7 +76,7 @@ get_download_url() {
   local variant=$(get_variant $version)
   case $version in
     nightly)
-      echo "https://github.com/gleam-lang/gleam/releases/download/Nightly/gleam-nightly-${variant}.tar.gz"
+      echo "https://github.com/gleam-lang/gleam/releases/download/nightly/gleam-nightly-${variant}.tar.gz"
       ;;
     *)
       echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
