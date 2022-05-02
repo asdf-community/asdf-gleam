@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-git ls-remote --tags --refs https://github.com/gleam-lang/gleam | # get refs and tags 
-grep -E "nightly|v*" |                                            # check for tags that specify versions, and include the nightly release
-sed 's;^.*refs/tags/v*\(.*\)$;\1;' |                              # clean tag info to only include version number
-grep -vE '^(0.1.0|0.1.1|0.1.2)$' |                                # exclude versions that do not have associated binaries
-sort -V |                                                         # sort by version number
-xargs echo
+git ls-remote --tags --refs https://github.com/gleam-lang/gleam | # get refs and tags
+  grep -E "nightly|v*" |                                            # check for tags that specify versions, and include the nightly release
+  sed 's;^.*refs/tags/v*\(.*\)$;\1;' |                              # clean tag info to only include version number
+  grep -vE '^(0.1.0|0.1.1|0.1.2)$' |                                # exclude versions that do not have associated binaries
+  sort -V |                                                         # sort by version number
+  xargs echo
