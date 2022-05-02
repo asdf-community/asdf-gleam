@@ -74,7 +74,14 @@ download_file() {
 get_download_url() {
   local version=$1
   local variant=$(get_variant $version)
-  echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
+  case $version in
+    nightly)
+      echo "https://github.com/gleam-lang/gleam/releases/download/nightly/gleam-nightly-${variant}.tar.gz"
+      ;;
+    *)
+      echo "https://github.com/gleam-lang/gleam/releases/download/v${version}/gleam-v${version}-${variant}.tar.gz"
+      ;;
+  esac
 }
 
 install_gleam $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH

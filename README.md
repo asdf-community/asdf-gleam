@@ -13,8 +13,15 @@
 > asdf-erlang. For using gleam libraries you might also need `rebar3`. It is
 > installable via asdf-rebar.
 
+
 ```
-asdf plugin-add gleam https://github.com/vic/asdf-gleam.git
+asdf plugin-add gleam
+```
+
+or
+
+```
+asdf plugin-add gleam https://github.com/asdf-community/asdf-gleam.git
 ```
 
 Since `0.2.0`, Gleam has binary releases for macos and linux.
