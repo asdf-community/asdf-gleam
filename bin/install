@@ -60,7 +60,7 @@ get_llvm_triplet_variant() {
   case "$(uname -s)" in
     Linux)
       case "$(uname -m)" in
-        x86_64) echo v86_64-unknown-linux-musl ;;
+        x86_64) echo x86_64-unknown-linux-musl ;;
         arm64) echo aarch64-unknown-linux-musl ;;
         *) fail "$(uname -m) is not supported on linux" ;;
       esac
