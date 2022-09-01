@@ -38,10 +38,46 @@ has_binary_release() {
   version_gt "$version" "0.1"
 }
 
+uses_llvm_triplets() {
+  local version=$1
+  test "$version" = "nightly" || version_gt "$version" "0.22"
+}
+
 # from https://stackoverflow.com/questions/16989598/bash-comparing-version-numbers/24067243
 version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
 
 get_variant() {
+  local version="$1"
+  if uses_llvm_triplets "$version"; then
+    get_llvm_triplet_variant "$version"
+  else
+    get_legacy_variant "$version"
+  fi
+}
+
+get_llvm_triplet_variant() {
+  local version="$1"
+  case "$(uname -s)" in
+    Linux)
+      case "$(uname -m)" in
+        x86_64) echo v86_64-unknown-linux-musl ;;
+        arm64) echo aarch64-unknown-linux-musl ;;
+        *) fail "$(uname -m) is not supported on linux" ;;
+      esac
+      ;;
+    Darwin)
+      case "$(uname -m)" in
+        x86_64) echo x86_64-apple-darwin ;;
+        arm64) echo aarch64-apple-darwin ;;
+        *) fail "$(uname -m) is not supported on macos" ;;
+      esac
+      ;;
+    *) fail "$(uname -s) is not supported" ;;
+  esac
+}
+
+
+get_legacy_variant() {
   local version="$1"
   case "$(uname -s)" in
     Linux)
