@@ -40,7 +40,7 @@ has_binary_release() {
 
 uses_llvm_triplets() {
   local version=$1
-  test "$version" = "nightly" || version_gt "$version" "0.22"
+  test "$version" = "nightly" || version_gt "$version" "0.22.1"
 }
 
 # from https://stackoverflow.com/questions/16989598/bash-comparing-version-numbers/24067243
