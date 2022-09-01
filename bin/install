@@ -76,7 +76,6 @@ get_llvm_triplet_variant() {
   esac
 }
 
-
 get_legacy_variant() {
   local version="$1"
   case "$(uname -s)" in
