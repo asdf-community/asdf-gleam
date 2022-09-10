@@ -4,9 +4,9 @@ set -e
 set -o pipefail
 
 install_gleam() {
-  local install_type=$1
-  local version=$2
-  local install_path=$3
+  local install_type="$1"
+  local version="$2"
+  local install_path="$3"
 
   if [ "$install_type" = "version" ] && ! (has_binary_release $version); then
     echo "ERROR: Gleam version $version has no binary release."
@@ -34,12 +34,12 @@ install_gleam() {
 }
 
 has_binary_release() {
-  local version=$1
+  local version="$1"
   version_gt "$version" "0.1"
 }
 
 uses_llvm_triplets() {
-  local version=$1
+  local version="$1"
   test "$version" = "nightly" || version_gt "$version" "0.22.1"
 }
 
