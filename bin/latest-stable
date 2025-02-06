@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+git ls-remote --tags --refs https://github.com/gleam-lang/gleam | # get refs and tags
+  grep -E "v[0-9]{1,}.[0-9]{1,}.[0-9]{1,}" |                      # check for tags that include a semver string
+  sed 's;^.*refs/tags/v*\(.*\)$;\1;' |                            # clean tag info to only include version number
+  grep -vE 'rc' |                                                 # exclude versions that are release candidate
+  sort -V |                                                       # sort by version number
+  tail -1                                                         # pick the latest version
